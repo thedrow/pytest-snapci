@@ -6,17 +6,17 @@ from pytest_circleci import __version__
 from pytest_circleci import plugin
 
 setup(
-    name="pytest-circleci",
+    name="pytest-snapci",
     version=__version__,
-    description="py.test plugin for CircleCI",
+    description="py.test plugin for Snap-CI",
     long_description=textwrap.dedent(plugin.pytest_collection_modifyitems.__doc__),
-    author="Michael Twomey",
-    author_email="mick@twomeylee.name",
-    url="https://github.com/micktwomey/pytest-circleci",
-    packages=["pytest_circleci"],
+    author="Omer Katz",
+    author_email="omer.drow@gmail.com",
+    url="https://github.com/thedrow/pytest-snapci",
+    packages=["pytest_snapci"],
     entry_points={
         'pytest11': [
-            'circleci = pytest_circleci.plugin'
+            'snapci = pytest_snapci.plugin'
         ],
     },
     classifiers=(
