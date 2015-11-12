@@ -39,7 +39,7 @@ def pytest_collection_modifyitems(session, config, items):
     deselected = []
     for index, item in enumerate(list(items)):
         item_hash = int(hashlib.sha1(u':'.join(map(str, item.location)).encode('utf-8')).hexdigest(), 16)
-        if (item_hash % snap_worker_total) != snap_worker_index:
+        if (item_hash % snap_worker_total) != snap_worker_index - 1:
             deselected.append(item)
             items.remove(item)
     config.hook.pytest_deselected(items=deselected)
