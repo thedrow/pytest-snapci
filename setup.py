@@ -2,8 +2,8 @@ import textwrap
 
 from setuptools import setup
 
-from pytest_circleci import __version__
-from pytest_circleci import plugin
+from pytest_snapci import __version__
+from pytest_snapci import plugin
 
 setup(
     name="pytest-snapci",
