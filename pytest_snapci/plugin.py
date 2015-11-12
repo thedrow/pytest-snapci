@@ -9,9 +9,9 @@ class SnapCIError(Exception):
 def read_circleci_env_variables():
     """Read and convert SNAP_* environment variables"""
     snap_node_total = int(os.environ.get("SNAP_WORKER_TOTAL", "1").strip())
-    snap_node_index = int(os.environ.get("SNAP_WORKER_INDEX", "0").strip())
+    snap_node_index = int(os.environ.get("SNAP_WORKER_INDEX", "1").strip())
 
-    if snap_node_index >= snap_node_total:
+    if snap_node_index > snap_node_total:
         raise SnapCIError("SNAP_WORKER_INDEX={} >= SNAP_WORKER_TOTAL={}, should be less".format(snap_node_index, snap_node_total))
 
     return (snap_node_total, snap_node_index)
