@@ -33,6 +33,8 @@ def pytest_collection_modifyitems(session, config, items):
     Will run a subset of tests based on the node index.
 
     """
+    if os.environ.get("SNAP_CI", False) != "true":
+        return
     snap_worker_total, snap_worker_index = read_snapci_env_variables()
     deselected = []
     for index, item in enumerate(list(items)):
