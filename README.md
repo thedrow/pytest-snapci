@@ -1,11 +1,11 @@
-pytest-circleci
+pytest-snapci
 ===============
 
-py.test CircleCI Plugin
+py.test Snap-CI Plugin
 
-When running tests under CircleCI you can run on multiple machines. Circle sets
+When running tests under Snap-CI you can run on multiple machines. Snap-CI sets
 environment variables to indicate which machine you are running on. This plugin
 ensures tests are split across the machines by reading these variables.
 
-Once installed py.test will look for CIRCLE_NODE_TOTAL and CIRCLE_NODE_INDEX
+Once installed py.test will look for SNAP_WORKER_TOTAL and SNAP_WORKER_INDEX
 environment variables to partition tests with.
