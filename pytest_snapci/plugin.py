@@ -36,7 +36,7 @@ def pytest_collection_modifyitems(session, config, items):
     snap_node_total, snap_node_index = read_circleci_env_variables()
     deselected = []
     for index, item in enumerate(list(items)):
-        item_hash = int(hashlib.sha1(':'.join(map(str, item.location))).hexdigest(), 16)
+        item_hash = int(hashlib.sha1(u':'.join(map(str, item.location)).encode('utf-8')).hexdigest(), 16)
         if (item_hash % snap_node_total) != snap_node_index:
             deselected.append(item)
             items.remove(item)
